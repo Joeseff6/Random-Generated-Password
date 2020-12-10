@@ -9,6 +9,7 @@ var passwordText = {
   value: ``
 };
 
+
 function generatePassword() {
   prompt(`Generate a password!\nDoes your password require lowercase characters?`);
   passwordText.lower = prompt(`Choose any character to lowercase in your password:`)
@@ -19,8 +20,9 @@ function generatePassword() {
   prompt(`Does your password require special characters?`);
   passwordText.special = prompt(`Choose any special characters to include in your password:`)
   prompt(`How long does your password need to be? (Choose between 8 and 128 characters)`);
-  passwordText.value = passwordText.lower + passwordText.upper + passwordText.numerical + passwordText.special
-
+  return password = {
+    value: passwordText.lower + passwordText.upper + passwordText.numerical + passwordText.special
+  }
 }
 
 // Write password to the #password input
@@ -28,9 +30,10 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector(`#password`);
 
-  passwordText.value = password;
-
+  passwordText.value = password.value;
+  
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener(`click`, writePassword);
