@@ -11,7 +11,7 @@ var passwordText = {
 
 
 function generatePassword() {
-  prompt(`Generate a password!\nDoes your password require lowercase characters?`);
+  var choice1 = prompt(`Generate a password!\nDoes your password require lowercase characters?`);
   passwordText.lower = prompt(`Choose any character to lowercase in your password:`)
   prompt(`Does your password require uppercase characters?`);
   passwordText.upper = prompt(`Choose any character to uppercase in your password:`)
@@ -20,9 +20,7 @@ function generatePassword() {
   prompt(`Does your password require special characters?`);
   passwordText.special = prompt(`Choose any special characters to include in your password:`)
   prompt(`How long does your password need to be? (Choose between 8 and 128 characters)`);
-  return password = {
-    value: passwordText.lower + passwordText.upper + passwordText.numerical + passwordText.special
-  }
+  return password = passwordText.lower + passwordText.upper + passwordText.numerical + passwordText.special
 }
 
 // Write password to the #password input
@@ -30,7 +28,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector(`#password`);
 
-  passwordText.value = password.value;
+  passwordText.value = password;
   
 }
 
