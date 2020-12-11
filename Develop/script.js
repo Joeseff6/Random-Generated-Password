@@ -12,49 +12,69 @@ var passwordText = {
 
 function generatePassword() {
     // User chooses if lower-cased characters are required.
-  low = prompt(`Generate a password!\nDoes your password require lowercase characters?`).toLowerCase();
+  choice = prompt(`Generate a password!\nDoes your password require lowercase characters?`).toLowerCase();
   
   // While loop will ensure user puts an appropriate value. 
   choicelow = true;
   while (choicelow === true) {
-    if (low === `yes`) {
+    if (choice === `yes`) {
       passwordText.lower = prompt(`Choose any character to lowercase in your password:`)
       choicelow = false;
     } 
-    else if (low === `no`) {
+    else if (choice === `no`) {
       passwordText.lower = ``;
       choicelow = false;
     } 
     else {
       alert(`You must choose yes or no`);
-      low = prompt(`Does your password require lowercase characters?`).toLowerCase();
+      choice = prompt(`Does your password require lowercase characters?`).toLowerCase();
       choicelow = true;
     };
   }
 
 
   // User chooses if upper-cased characters are required.
-  up = prompt(`Does your password require uppercase characters?`).toLowerCase();
-  if (up === `yes`) {
-  passwordText.upper = prompt(`Choose any character to uppercase in your password:`)
-  } 
-  else if (up === `no`) {
-    passwordText.upper = ``;
-    choicelow = false;
-  } 
-  else {
-    alert(`You must choose yes or no`);
-    up = prompt(`Does your password require uppercase characters?`).toLowerCase();
-    choicelow = true;
-  };
+  choice = prompt(`Does your password require uppercase characters?`).toLowerCase();
+
+  // While loop will ensure user puts an appropriate value. 
+  choiceup = true;
+  while (choiceup === true) {
+    if (choice === `yes`) {
+      passwordText.upper = prompt(`Choose any character to uppercase in your password:`)
+      choiceup = false;
+    }
+    else if (choice === `no`) {
+      passwordText.upper = ``;
+      choiceup = false;
+    } 
+    else {
+      alert(`You must choose yes or no`);
+      choice = prompt(`Does your password require uppercase characters?`).toLowerCase();
+      choiceup = true;
+    };
+  }
+
 
   // User chooses if numeric values are required.
-  numeric = prompt(`Does your password require numeric values?`);
-  if (numeric === `yes`) {
-  passwordText.numerical = prompt(`Choose any number to include in your password:`)
-  } else {
-    passwordText.numerical = ``;
-  };
+  choice = prompt(`Does your password require numeric values?`).toLowerCase();
+
+  choicenumeric = true;
+  while (choicenumeric === true) {
+    if (choice === `yes`) {
+      passwordText.numerical = prompt(`Choose any number to include in your password:`)
+      choicenumeric = false;
+    } 
+    else if (choice === `no`) {
+      passwordText.numerical = ``;
+      choicenumeric = false;
+    } 
+    else {
+      alert(`You must choose yes or no`);
+      choice = prompt(`Does your password require numeric values?`).toLowerCase();
+      choicenumeric = true;
+    };
+  }
+
 
   // User chooses if special characters are required.
   spec = prompt(`Does your password require special characters?`);
