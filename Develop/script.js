@@ -15,20 +15,20 @@ function generatePassword() {
   choice = prompt(`Generate a password!\nDoes your password require lowercase characters?`).toLowerCase();
   
   // While loop will ensure user puts an appropriate value. 
-  choicelow = true;
-  while (choicelow === true) {
+  choiceLow = true;
+  while (choiceLow === true) {
     if (choice === `yes`) {
-      passwordText.lower = prompt(`Choose any character to lowercase in your password:`)
-      choicelow = false;
+      passwordText.lower = prompt(`Choose any character to lowercase in your password:`);
+      choiceLow = false;
     } 
     else if (choice === `no`) {
       passwordText.lower = ``;
-      choicelow = false;
+      choiceLow = false;
     } 
     else {
       alert(`You must choose yes or no`);
       choice = prompt(`Does your password require lowercase characters?`).toLowerCase();
-      choicelow = true;
+      choiceLow = true;
     };
   }
 
@@ -37,20 +37,20 @@ function generatePassword() {
   choice = prompt(`Does your password require uppercase characters?`).toLowerCase();
 
   // While loop will ensure user puts an appropriate value. 
-  choiceup = true;
-  while (choiceup === true) {
+  choiceUp = true;
+  while (choiceUp === true) {
     if (choice === `yes`) {
-      passwordText.upper = prompt(`Choose any character to uppercase in your password:`)
-      choiceup = false;
+      passwordText.upper = prompt(`Choose any character to uppercase in your password:`);
+      choiceUp = false;
     }
     else if (choice === `no`) {
       passwordText.upper = ``;
-      choiceup = false;
+      choiceUp = false;
     } 
     else {
       alert(`You must choose yes or no`);
       choice = prompt(`Does your password require uppercase characters?`).toLowerCase();
-      choiceup = true;
+      choiceUp = true;
     };
   }
 
@@ -58,31 +58,46 @@ function generatePassword() {
   // User chooses if numeric values are required.
   choice = prompt(`Does your password require numeric values?`).toLowerCase();
 
-  choicenumeric = true;
-  while (choicenumeric === true) {
+  // While loop will ensure user puts an appropriate value. 
+  choiceNumeric = true;
+  while (choiceNumeric  === true) {
     if (choice === `yes`) {
-      passwordText.numerical = prompt(`Choose any number to include in your password:`)
-      choicenumeric = false;
+      passwordText.numerical = prompt(`Choose any number to include in your password:`);
+      choiceNumeric = false;
     } 
     else if (choice === `no`) {
       passwordText.numerical = ``;
-      choicenumeric = false;
+      choiceNumeric = false;
     } 
     else {
       alert(`You must choose yes or no`);
       choice = prompt(`Does your password require numeric values?`).toLowerCase();
-      choicenumeric = true;
+      choiceNumeric = true;
     };
   }
 
 
   // User chooses if special characters are required.
-  spec = prompt(`Does your password require special characters?`);
-  if (spec === `yes`) {
-  passwordText.special = prompt(`Choose any special characters to include in your password:`)
-  } else {
-    passwordText.special = ``;
-  };
+  choice = prompt(`Does your password require special characters?`);
+
+  // While loop will ensure user puts an appropriate value. 
+  choiceSpec = true;
+  while (choiceSpec === true) {
+    if (choice === `yes`) {
+      passwordText.special = prompt(`Choose any special characters to include in your password:`);
+      choiceSpec = false;
+    } 
+    else if (choice === `no`) {
+      passwordText.special = ``;
+      choiceSpec = false;
+    } 
+    else {
+      alert(`You must choose yes or no`);
+      choice = prompt(`Does your password require special characters?`);
+      choiceSpec = true;
+    };
+  }
+
 
   // User chooses character length of password. User cannot choose anything outside of a number 8 through 128.
   charLength = parseInt(prompt(`How long does your password need to be?\n8 through 128 characters allowed)`));
@@ -90,9 +105,9 @@ function generatePassword() {
   // While loop will ensure user puts an appropriate value. 
   while (newNum === true) {
     if (charLength < 8 || charLength > 128 || isFinite(charLength) === false) {
-      newNum = true;
       alert(`Please choose between 8 and 128.`);
       charLength = prompt(`How long does your password need to be?`);
+      newNum = true;
     } else {
       newNum = false;
     }
