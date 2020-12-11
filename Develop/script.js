@@ -35,12 +35,12 @@ function generatePassword() {
   };
 
 
-  charLength = parseInt(prompt(`How long does your password need to be?\n8 characters minimum, 128 characters max)`));
+  charLength = parseInt(prompt(`How long does your password need to be?\n8 through 128 characters allowed)`));
   newNum = true;
   while (newNum === true) {
-    if (charLength <= 8 || charLength >= 128) {
+    if (charLength < 8 || charLength > 128 || isFinite(charLength) === false) {
       newNum = true;
-      alert(`Please enter a number in between 8 and 128.`);
+      alert(`Please choose between 8 and 128.`);
       charLength = prompt(`How long does your password need to be?`);
     } else {
       newNum = false;
