@@ -15,24 +15,32 @@ function generatePassword() {
   low = prompt(`Generate a password!\nDoes your password require lowercase characters?`).toLowerCase();
   if (low === 'yes') {
     passwordText.lower = prompt(`Choose any character to lowercase in your password:`)
+  } else {
+    passwordText.lower = ``;
   };
 
   // User chooses if upper-cased characters are required.
   up = prompt(`Does your password require uppercase characters?`).toLowerCase();
   if (up === 'yes') {
   passwordText.upper = prompt(`Choose any character to uppercase in your password:`)
+  } else {
+  passwordText.upper = ``;
   };
 
   // User chooses if numeric values are required.
   numeric = prompt(`Does your password require numeric values?`);
   if (numeric === 'yes') {
   passwordText.numerical = prompt(`Choose any number to include in your password:`)
+  } else {
+    passwordText.numerical = ``;
   };
 
   // User chooses if special characters are required.
   spec = prompt(`Does your password require special characters?`);
   if (spec === 'yes') {
   passwordText.special = prompt(`Choose any special characters to include in your password:`)
+  } else {
+    passwordText.special = ``;
   };
 
   // User chooses character length of password. User cannot choose anything outside of a number 8 through 128.
@@ -48,8 +56,17 @@ function generatePassword() {
     }
   }
 
+  // Add variables for the for the for loop to randomize string.
+  var chars = passwordText.lower + passwordText.upper + passwordText.numerical + passwordText.special;
+  pass = ``
+
+  for (i = 0; i < charLength; i++) {
+    pass = pass + chars[Math.floor(Math.random() * Math.floor(chars.length))];
+  }
+
   // Give a value to the password variable once the function is over.
-  return password = passwordText.lower + passwordText.upper + passwordText.numerical + passwordText.special
+  return password = pass;
+
 }
 
 // Write password to the #password input
@@ -58,10 +75,8 @@ function writePassword() {
   var passwordText = document.querySelector(`#password`);
 
   passwordText.value = password;
-  
 }
 
 
 // Add event listener to generate button
 generateBtn.addEventListener(`click`, writePassword);
-
