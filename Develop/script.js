@@ -18,7 +18,7 @@ function generatePassword() {
   choiceLow = true;
   while (choiceLow === true) {
     if (choice === `yes`) {
-      passwordText.lower = prompt(`Choose any character to lowercase in your password:`);
+      passwordText.lower = prompt(`Choose any character to lowercase in your password (will automatically lowercase):`).toLowerCase();
       choiceLow = false;
     } 
     else if (choice === `no`) {
@@ -40,7 +40,7 @@ function generatePassword() {
   choiceUp = true;
   while (choiceUp === true) {
     if (choice === `yes`) {
-      passwordText.upper = prompt(`Choose any character to uppercase in your password:`);
+      passwordText.upper = prompt(`Choose any character to uppercase in your password (will automatically uppercase):`).toUpperCase();
       choiceUp = false;
     }
     else if (choice === `no`) {
