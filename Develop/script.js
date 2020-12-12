@@ -118,6 +118,7 @@ function generatePassword() {
   pass = ``
 
   // for loop for randomizing the characters in the password.
+  let i = 0
   for (i = 0; i < charLength; i++) {
     pass = pass + chars[Math.floor(Math.random() * Math.floor(chars.length))];
   }

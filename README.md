@@ -21,4 +21,4 @@ In order to satisfy the requirements for this application, the password generato
 - [x] Allow user to choose the length of the password, password can be as long as 128 characters, but no shorter than 8 characters.
 - [x] After criteria is given by user, the user will choose characters to include in their password.
 - [ ] The user's input will be validated to ensure each character type is selected.
-- [ ] A password will be generated meeting the user's criteria and displayed on the webpage.
+- [x] A password will be generated meeting the user's criteria and displayed on the webpage.
