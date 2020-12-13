@@ -82,7 +82,6 @@ function generatePassword() {
 
   // Give a value to the password variable once the function is over.
     return password = pass;
-
 }
 
 // Write password to the #password input
