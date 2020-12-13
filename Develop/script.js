@@ -11,35 +11,49 @@ var passwordText = {
 };
 
 function generatePassword() {
+
+  // While loop used to nest all user inputs for validation that user makes a choice
+  var charchoices = true;
+  while (charchoices === true) {
     // User chooses if lower-cased characters are required.
     var choice = confirm(`Generate a password!\nDoes your password require lowercase characters?`);
     if (choice === true) {
-        passwordText.lower = `abcdefghijklmnopqrstuvwxyz`;
-    } 
-
-  // User chooses if upper-cased characters are required.
-    var choice = confirm(`Does your password require uppercase characters?`);
-    if (choice === true) {
-        passwordText.upper = (`abcdefghijklmnopqrstuvwxyz`).toUpperCase();
+      passwordText.lower = `abcdefghijklmnopqrstuvwxyz`;
+    } else {
+      passwordText.lower = ``;
     }
 
+    // User chooses if upper-cased characters are required.
+    var choice = confirm(`Does your password require uppercase characters?`);
+    if (choice === true) {
+      passwordText.upper = (`abcdefghijklmnopqrstuvwxyz`).toUpperCase();
+    } else {
+      passwordText.upper = ``;
+    }
 
-
-  // User chooses if numeric values are required.
+    // User chooses if numeric values are required.
     var choice = confirm(`Does your password require numeric values?`);
     if (choice === true) {
-        passwordText.numerical = (`1234567890`);
-    } 
+      passwordText.numerical = (`1234567890`);
+    } else {
+      passwordText.numerical = ``;
+    }
 
-
-
-  // User chooses if special characters are required.
+    // User chooses if special characters are required.
     choice = confirm(`Does your password require special characters?`);
-
     if (choice === true) {
-        passwordText.special = (`!"#$%&'()*+,-./:;<=>?@[\]^_\`{|}~`);
-    } 
+      passwordText.special = (`!"#$%&'()*+,-./:;<=>?@[\]^_\`{|}~`);
+    } else {
+      passwordText.special = ``;
+    }
 
+    // Condition to validate if user chose any set of characters to include in password
+    if (passwordText.lower === `` && passwordText.upper === `` && passwordText.numerical === `` && passwordText.special === ``) {
+      alert("You must choose at least one characterset to include in your password!")
+    } else {
+      var charchoices = false
+    }
+  }
 
   // User chooses character length of password. User cannot choose anything outside of a number 8 through 128.
     var charLength = parseInt(prompt(`How long does your password need to be?\n8 through 128 characters allowed)`));
@@ -78,7 +92,6 @@ function writePassword() {
 
     passwordText.value = password;
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener(`click`, writePassword);
