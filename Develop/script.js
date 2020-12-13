@@ -15,20 +15,20 @@ function generatePassword() {
   choice = prompt(`Generate a password!\nDoes your password require lowercase characters?`).toLowerCase();
   
   // While loop will ensure user puts an appropriate value. 
-  choiceLow = true;
-  while (choiceLow === true) {
+  yesNo = true;
+  while (yesNo === true) {
     if (choice === `yes`) {
       passwordText.lower = prompt(`Choose any character to lowercase in your password (will automatically lowercase):`).toLowerCase();
-      choiceLow = false;
+      yesNo = false;
     } 
     else if (choice === `no`) {
       passwordText.lower = ``;
-      choiceLow = false;
+      yesNo = false;
     } 
     else {
       alert(`You must choose yes or no`);
       choice = prompt(`Does your password require lowercase characters?`).toLowerCase();
-      choiceLow = true;
+      yesNo = true;
     };
   }
 
@@ -37,20 +37,20 @@ function generatePassword() {
   choice = prompt(`Does your password require uppercase characters?`).toLowerCase();
 
   // While loop will ensure user puts an appropriate value. 
-  choiceUp = true;
-  while (choiceUp === true) {
+  yesNo = true;
+  while (yesNo === true) {
     if (choice === `yes`) {
       passwordText.upper = prompt(`Choose any character to uppercase in your password (will automatically uppercase):`).toUpperCase();
-      choiceUp = false;
+      yesNo = false;
     }
     else if (choice === `no`) {
       passwordText.upper = ``;
-      choiceUp = false;
+      yesNo = false;
     } 
     else {
       alert(`You must choose yes or no`);
       choice = prompt(`Does your password require uppercase characters?`).toLowerCase();
-      choiceUp = true;
+      yesNo = true;
     };
   }
 
@@ -59,20 +59,20 @@ function generatePassword() {
   choice = prompt(`Does your password require numeric values?`).toLowerCase();
 
   // While loop will ensure user puts an appropriate value. 
-  choiceNumeric = true;
-  while (choiceNumeric  === true) {
+  yesNo = true;
+  while (yesNo  === true) {
     if (choice === `yes`) {
       passwordText.numerical = prompt(`Choose any number to include in your password:`);
-      choiceNumeric = false;
+      yesNo = false;
     } 
     else if (choice === `no`) {
       passwordText.numerical = ``;
-      choiceNumeric = false;
+      yesNo = false;
     } 
     else {
       alert(`You must choose yes or no`);
       choice = prompt(`Does your password require numeric values?`).toLowerCase();
-      choiceNumeric = true;
+      yesNo = true;
     };
   }
 
@@ -81,20 +81,20 @@ function generatePassword() {
   choice = prompt(`Does your password require special characters?`);
 
   // While loop will ensure user puts an appropriate value. 
-  choiceSpec = true;
-  while (choiceSpec === true) {
+  yesNo = true;
+  while (yesNo === true) {
     if (choice === `yes`) {
       passwordText.special = prompt(`Choose any special characters to include in your password:`);
-      choiceSpec = false;
+      yesNo = false;
     } 
     else if (choice === `no`) {
       passwordText.special = ``;
-      choiceSpec = false;
+      yesNo = false;
     } 
     else {
       alert(`You must choose yes or no`);
       choice = prompt(`Does your password require special characters?`);
-      choiceSpec = true;
+      yesNo = true;
     };
   }
 
