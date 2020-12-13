@@ -20,7 +20,7 @@ function generatePassword() {
     while (newNum === true) {
         if (charLength < 8 || charLength > 128 || isFinite(charLength) === false) {
         alert(`Please choose between 8 and 128.`);
-        var charLength = prompt(`How long does your password need to be?`);
+        var charLength = prompt(`How many characters does your password need to have?\n(8 through 128 characters allowed)`);
         var newNum = true;
         } else {
             var newNum = false;

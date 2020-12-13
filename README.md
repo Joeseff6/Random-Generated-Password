@@ -12,7 +12,7 @@ The purpose of the deployed application is to allow the user to generate a rando
 
 The product of this project will feature a fully functional web application, supported by HTML, CSS, and Javascript. Thanks to webpage responsiveness, the user will be able to access this application via web browser on desktop, or on a mobile device such as an IPhone X. Users will be able to utilize this application in real-world scenarios, such as registering for new account that have character limits, lowercase/capitalization requirements, special character requirements, and so forth.
 
-## Tasks to Complete the Job
+## Tasks to Complete the Job :white_check_mark:
 
 In order to satisfy the requirements for this application, the password generator must do the following:
 
