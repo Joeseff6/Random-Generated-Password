@@ -12,11 +12,26 @@ var passwordText = {
 
 function generatePassword() {
 
+    // User chooses character length of password. User cannot choose anything outside of a number 8 through 128.
+    var charLength = parseInt(prompt(`Generate a password!\nHow long does your password need to be?\n8 through 128 characters allowed)`));
+    var newNum = true;
+
+  // While loop will ensure user puts an appropriate value. 
+    while (newNum === true) {
+        if (charLength < 8 || charLength > 128 || isFinite(charLength) === false) {
+        alert(`Please choose between 8 and 128.`);
+        var charLength = prompt(`How long does your password need to be?`);
+        var newNum = true;
+        } else {
+            var newNum = false;
+        }
+    }
+  
   // While loop used to nest all user inputs for validation that user makes a choice
   var charchoices = true;
   while (charchoices === true) {
     // User chooses if lower-cased characters are required.
-    var choice = confirm(`Generate a password!\nDoes your password require lowercase characters?`);
+    var choice = confirm(`Does your password require lowercase characters?`);
     if (choice === true) {
       passwordText.lower = `abcdefghijklmnopqrstuvwxyz`;
     } else {
@@ -55,20 +70,7 @@ function generatePassword() {
     }
   }
 
-  // User chooses character length of password. User cannot choose anything outside of a number 8 through 128.
-    var charLength = parseInt(prompt(`How long does your password need to be?\n8 through 128 characters allowed)`));
-    var newNum = true;
 
-  // While loop will ensure user puts an appropriate value. 
-    while (newNum === true) {
-        if (charLength < 8 || charLength > 128 || isFinite(charLength) === false) {
-        alert(`Please choose between 8 and 128.`);
-        var charLength = prompt(`How long does your password need to be?`);
-        var newNum = true;
-        } else {
-            var newNum = false;
-        }
-    }
 
   // Add variables for the for the for loop to randomize string.
     var chars = passwordText.lower + passwordText.upper + passwordText.numerical + passwordText.special;
