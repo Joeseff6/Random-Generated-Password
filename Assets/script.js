@@ -13,7 +13,7 @@ var passwordText = {
 function generatePassword() {
 
     // User chooses character length of password. User cannot choose anything outside of a number 8 through 128.
-    var charLength = parseInt(prompt(`Generate a password!\nHow long does your password need to be?\n8 through 128 characters allowed)`));
+    var charLength = parseInt(prompt(`Generate a password!\nHow many characters does your password need to have?\n8 through 128 characters allowed)`));
     var newNum = true;
 
   // While loop will ensure user puts an appropriate value. 
