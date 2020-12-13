@@ -29,4 +29,17 @@ In order to satisfy the requirements for this application, the password generato
 * Edit styling for aesthetics
 * Add sounds depending on user input
 
+### Screenshots
+
+![Character length prompt after clicking button](./Assets/Images/Image1.PNG)
+
+![User input for lowercase characters](./Assets/Images/Image2.PNG)
+
+![User input for uppercase characters](./Assets/Images/Image3.PNG)
+
+![User input for numerical characters](./Assets/Images/Image4.PNG)
+
+![User input for special characters](./Assets/Images/Image5.PNG)
+
+![New password generated from user inputs](./Assets/Images/Image6.PNG)
 
