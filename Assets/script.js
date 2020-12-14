@@ -39,7 +39,7 @@ function generatePassword() {
     }
 
     // User chooses if upper-cased characters are required.
-    var choice = confirm(`Does your password require uppercase characters?`);
+    choice = confirm(`Does your password require uppercase characters?`);
     if (choice === true) {
       passwordText.upper = (`abcdefghijklmnopqrstuvwxyz`).toUpperCase();
     } else {
@@ -47,7 +47,7 @@ function generatePassword() {
     }
 
     // User chooses if numeric values are required.
-    var choice = confirm(`Does your password require numeric values?`);
+    choice = confirm(`Does your password require numeric values?`);
     if (choice === true) {
       passwordText.numerical = (`1234567890`);
     } else {
@@ -55,7 +55,7 @@ function generatePassword() {
     }
 
     // User chooses if special characters are required.
-    var choice = confirm(`Does your password require special characters?`);
+    choice = confirm(`Does your password require special characters?`);
     if (choice === true) {
       passwordText.special = (`!"#$%&'()*+,-./:;<=>?@[\]^_\`{|}~`);
     } else {
@@ -77,7 +77,7 @@ function generatePassword() {
   var pass = ``;
 
   // for loop for randomizing the characters in the password.
-  let i = 0
+  let i = 0;
   for (i = 0; i < charLength; i++) {
     pass = pass + chars[Math.floor(Math.random() * Math.floor(chars.length))];
   }
@@ -85,7 +85,7 @@ function generatePassword() {
   var password = pass;
 
   // Give a value to the password variable once the function is over.
-  return password
+  return password;
 }
 
 // Write password to the #password input
