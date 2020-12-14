@@ -64,9 +64,9 @@ function generatePassword() {
 
     // Condition to validate if user chose any set of characters to include in password
     if (passwordText.lower === `` && passwordText.upper === `` && passwordText.numerical === `` && passwordText.special === ``) {
-      alert("You must choose at least one characterset to include in your password!")
+      alert("You must choose at least one characterset to include in your password!");
     } else {
-      var charchoices = false
+      var charchoices = false;
     }
   }
 
@@ -74,7 +74,7 @@ function generatePassword() {
 
   // Add variables for the for the for loop to randomize string.
     var chars = passwordText.lower + passwordText.upper + passwordText.numerical + passwordText.special;
-    pass = ``
+    pass = ``;
 
   // for loop for randomizing the characters in the password.
     let i = 0
